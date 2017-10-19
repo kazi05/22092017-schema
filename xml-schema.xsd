@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="таблица" type="students-table"/>
+
+	<xs:complexType name="students-table">
+		<xs:sequence>
+			<xs:element name="студент" type="mark" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="mark">
+		<xs:sequence>
+			<xs:element name="отметка" type="lesson-name" maxOccurs="unbounded"/>
+		</xs:sequence>
+        <xs:attribute name="имя" type="xs:string"/>
+   </xs:complexType>
+   
+   <xs:complexType name="lesson-name" mixed="true">
+        <xs:attribute name="дисциплина" type="xs:string"/>
+   </xs:complexType>
+</xs:schema>
